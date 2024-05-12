@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <fstream>
+#define FILENAME "empFile.txt"
 
 class Worker;
 
@@ -12,7 +14,18 @@ public:
     void Show_Menu();
     void ExitSystem();
     void Add_Emp();
+    void save();
+    int get_EmpNum();
+    void init_Emp();
+    void Show_Emp();
+    void Del_Emp();
+    int isExist(int id);
+    void Mod_Emp();
+    void Find_Emp();
+    void Sort_Emp();
+    void Clean_File();
 
+    bool m_FileIsEmpty;
     int m_EmpNum;
     Worker **m_EmpArray;
     int dSelect;
@@ -25,7 +38,7 @@ public:
     virtual std::string getDeptName() = 0;
 
     int m_Id;
-    std::string m_Name;
+    std::string m_Name;                                                                                                                                                                             
     int m_DeptId;
 };
 
@@ -52,6 +65,8 @@ public:
     virtual void showInfo();
     virtual std::string getDeptName();
 };
+
+
 
 
 
